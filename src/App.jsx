@@ -55,10 +55,10 @@ class Movies extends Component {
   render() {
     console.log(this.state)
     return (
-      <section>
+      <>
         {this.state.movies.map(movie => (
           <article>
-            <div>
+            <div className="movie">
               <h1>{movie.title}</h1>
               <img
                 src={`https://image.tmdb.org/t/p/w185${movie.poster_path}`}
@@ -67,7 +67,7 @@ class Movies extends Component {
             </div>
           </article>
         ))}
-      </section>
+      </>
     )
   }
 }
@@ -76,7 +76,9 @@ class App extends Component {
   render() {
     return (
       <main>
-        <Movies />
+        <section>
+          <Movies />
+        </section>
       </main>
     )
   }
