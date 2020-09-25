@@ -39,7 +39,7 @@ import React, { Component } from 'react'
 // Understand and use "props" in React
 // Use map to render a collection of components in React
 
-class App extends Component {
+class Movies extends Component {
   state = {
     movies: [],
   }
@@ -55,9 +55,9 @@ class App extends Component {
   render() {
     console.log(this.state)
     return (
-      <>
+      <section>
         {this.state.movies.map(movie => (
-          <main className="container">
+          <article>
             <div>
               <h1>{movie.title}</h1>
               <img
@@ -65,9 +65,19 @@ class App extends Component {
               />
               <p>{movie.overview}</p>
             </div>
-          </main>
+          </article>
         ))}
-      </>
+      </section>
+    )
+  }
+}
+
+class App extends Component {
+  render() {
+    return (
+      <main>
+        <Movies />
+      </main>
     )
   }
 }
